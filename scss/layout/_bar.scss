@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+@use "../components" as *;
+
+%bar {
+	background: transparent;
+	margin: 0px $spacing-sm;
+
+	@extend %widget;
+	@extend %workspaces;
+	@extend %other;
+}

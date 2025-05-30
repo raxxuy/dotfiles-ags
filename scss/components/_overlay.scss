@@ -1,0 +1,22 @@
+@use "../abstracts" as *;
+@use "sass:color";
+
+%overlay {
+	.overlay {
+		transition: all 200ms ease;
+		background: none;
+		border-radius: $border-radius-md;
+
+		&-backdrop {
+			background: rgba(0, 0, 0, 0.75);
+		}
+		
+		&-border {
+			@include overlay-border($color14, 2px);
+		}
+
+		&-transition {
+			transition: transform 200ms ease, opacity 200ms ease;
+		}
+	}
+}

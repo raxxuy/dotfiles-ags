@@ -1,0 +1,8 @@
+@use "abstracts";
+@use "components";
+@use "layout";
+
+window.bar {
+	@extend %bar;
+	@extend %overlay;
+}

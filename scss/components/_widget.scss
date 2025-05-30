@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+
+%widget {
+	.widget {
+		color: $foreground;
+
+		&.inline-padding {
+			padding: 0px $spacing-sm;
+		}
+	}
+}
