@@ -11,20 +11,16 @@ export default function Volume() {
 		(v) => `${Math.round(v * 100)}%`
 	);
 
-	const cleanup = () => {
-		speakerVolumeLabel.drop();
-	};
+	const cleanup = () => speakerVolumeLabel.drop();
 
-	const handleScroll = (_: unknown, _dx: number, dy: number) => {
-		if (dy < 0) raiseVolume();
-		else lowerVolume();
-	};
+	const handleScroll = (_: unknown, _dx: number, dy: number) =>
+		dy < 0 ? raiseVolume() : lowerVolume();
 
 	return (
 		<Widget
 			cssClasses={["volume"]}
 			widthRequest={80}
-			spacing={6}
+			spacing={4}
 			hexpand
 			onDestroy={cleanup}
 		>

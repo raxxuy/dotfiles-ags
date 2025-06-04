@@ -7,6 +7,7 @@ export default function Overlay({
 	children,
 	spacing = 8,
 	border = true,
+	visible = true,
 	backdrop = true,
 	transition = true,
 	cssClasses = [],
@@ -21,7 +22,7 @@ export default function Overlay({
 	});
 
 	return (
-		<Widget cssClasses={overlayClasses} hexpand={false}>
+		<Widget cssClasses={overlayClasses} hexpand={false} visible={visible}>
 			<Widget cssClasses={["overlay-content"]} spacing={spacing} {...props}>
 				{children}
 			</Widget>

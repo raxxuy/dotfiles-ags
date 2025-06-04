@@ -8,6 +8,9 @@ const WIDGET_COMPONENTS: Record<
 	button: ({ label, children, ...props }) => (
 		<button {...props}>{label || children}</button>
 	),
+	menubutton: ({ children, ...props }) => (
+		<menubutton {...props}>{children}</menubutton>
+	),
 	label: ({ label, children, ...props }) => (
 		<label {...props}>{label || children}</label>
 	),

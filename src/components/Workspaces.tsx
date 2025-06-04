@@ -1,5 +1,5 @@
 import Widget from "@/components/ui/widget";
-import WorkspaceButton from "@/components/workspaces/WorkspaceButton";
+import WorkspaceButton from "@/components/widgets/WorkspaceButton";
 import HyprService from "@/services/hypr";
 
 export default function Workspaces() {

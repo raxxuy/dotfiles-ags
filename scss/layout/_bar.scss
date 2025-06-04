@@ -3,7 +3,8 @@
 
 %bar {
 	background: transparent;
-	margin: 0px $spacing-sm;
+	font-family: $font-family;
+	margin: 0 $spacing-sm;
 
 	@extend %widget;
 	@extend %workspaces;

@@ -1,14 +1,20 @@
 @use "../abstracts" as *;
 
 %other {
-  .clock, .volume {
+  .clock, .volume, .battery {
     font-size: small;
     font-weight: bold;
-    padding: 0px $spacing-sm;
+    padding: 0 calc($spacing-sm * 1.6);
   }
 
   .clock {
     $transition-timing: 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
     transition: transform $transition-timing;
+  }
+
+  .tray {
+    .toggle {
+      padding: 0 calc($spacing-sm * 2);
+    }
   }
 }

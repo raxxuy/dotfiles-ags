@@ -20,12 +20,10 @@ class HyprService {
 		this.focusedWorkspace = bind(this.hypr, "focusedWorkspace");
 		this.focusedClient = bind(this.hypr, "focusedClient");
 
-		// Initialize workspaces map
 		this.workspaces
 			.get()
 			.forEach((workspace) => this.workspacesMap.set(workspace.id, workspace));
 
-		// Set up event handlers
 		this.workspaceAddedHandler = this.hypr.connect(
 			"workspace-added",
 			(_, workspace) => this.workspacesMap.set(workspace.id, workspace)
@@ -37,9 +35,8 @@ class HyprService {
 		);
 	}
 
-	isFocused = (id: number): Variable<boolean> => {
-		return Variable.derive([this.focusedWorkspace], (ws) => ws.id === id);
-	};
+	isFocused = (id: number): Variable<boolean> =>
+		Variable.derive([this.focusedWorkspace], (ws) => ws.id === id);
 
 	getClientCount = (id: number): Variable<number> => {
 		const workspace = this.workspacesMap.get(id);

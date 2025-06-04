@@ -36,6 +36,7 @@ class TimeService {
 
 	cleanup(): void {
 		this.time.drop();
+		this.format.drop();
 	}
 
 	static getInstance(): TimeService {

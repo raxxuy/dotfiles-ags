@@ -1,7 +1,7 @@
 import { Binding } from "astal";
 import { ConstructProps, Gtk } from "astal/gtk4";
 
-export type WidgetType = "box" | "button" | "label" | "centerbox";
+export type WidgetType = "box" | "button" | "label" | "centerbox" | "menubutton";
 
 export interface BaseWidgetProps
 	extends ConstructProps<Gtk.Widget, Gtk.Widget.ConstructorProps> {
