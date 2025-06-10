@@ -1,4 +1,4 @@
-import Widget from "@/components/ui/widget";
+import Widget from "@/components/core/widget";
 import BatteryService from "@/services/battery";
 import { Variable } from "astal";
 
@@ -9,7 +9,7 @@ export default function Battery() {
 		[percentage],
 		(v) => `${Math.round(v * 100)}%`
 	);
-	
+
 	const cleanup = () => batteryLabel.drop();
 
 	return (

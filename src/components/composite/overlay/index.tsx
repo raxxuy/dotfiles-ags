@@ -1,6 +1,6 @@
-import { createOverlayClasses } from "@/components/ui/overlay/overlay.styles";
-import { OverlayProps } from "@/components/ui/overlay/overlay.types";
-import Widget from "@/components/ui/widget";
+import Widget from "@/components/core/widget";
+import { createOverlayClasses } from "./styles";
+import { OverlayProps } from "./types";
 
 export default function Overlay({
 	id,
@@ -14,7 +14,6 @@ export default function Overlay({
 	...props
 }: OverlayProps) {
 	const overlayClasses = createOverlayClasses({
-		id,
 		border,
 		backdrop,
 		transition,
@@ -22,7 +21,7 @@ export default function Overlay({
 	});
 
 	return (
-		<Widget cssClasses={overlayClasses} hexpand={false} visible={visible}>
+		<Widget name={`overlay-${id}`} cssClasses={overlayClasses} hexpand={false} visible={visible}>
 			<Widget cssClasses={["overlay-content"]} spacing={spacing} {...props}>
 				{children}
 			</Widget>

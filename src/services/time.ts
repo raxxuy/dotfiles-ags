@@ -9,6 +9,7 @@ class TimeService {
 	private readonly config: Config["clock"];
 
 	readonly time: Variable<string>;
+	readonly date: Variable<string>;
 
 	private constructor() {
 		this.config = ConfigService.getConfig().clock;
@@ -16,11 +17,19 @@ class TimeService {
 		this.time = new Variable("").poll(this.config.updateInterval, () =>
 			this.formatTime()
 		);
+		this.date = new Variable("").poll(this.config.updateInterval, () =>
+			this.formatTimeUtc()
+		);
 	}
 
 	private formatTime(): string {
 		const now = GLib.DateTime.new_now_local();
 		return now.format(TimeFormats[this.format.get()])!;
+	}
+
+	private formatTimeUtc(): string {
+		const now = GLib.DateTime.new_now_utc();
+		return now.format("%F")!;
 	}
 
 	changeFormat = (): void => {

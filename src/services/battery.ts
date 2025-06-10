@@ -7,12 +7,14 @@ export class BatteryService {
 
   readonly percentage: Binding<number>;
   readonly iconName: Binding<string>;
+  readonly batteryIconName: Binding<string>;
 
   private constructor() {
     this.battery = AstalBattery.get_default()!;
 
     this.percentage = bind(this.battery, "percentage");
     this.iconName = bind(this.battery, "iconName");
+    this.batteryIconName = bind(this.battery, "batteryIconName");
   }
 
   static getInstance(): BatteryService {

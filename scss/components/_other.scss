@@ -1,7 +1,7 @@
 @use "../abstracts" as *;
 
 %other {
-  .clock, .volume, .battery {
+  .clock, .volume, .battery, .settings, .notifications {
     font-size: small;
     font-weight: bold;
     padding: 0 calc($spacing-sm * 1.6);
@@ -15,6 +15,16 @@
   .tray {
     .toggle {
       padding: 0 calc($spacing-sm * 2);
+    }
+
+    .menu {
+      margin: 10px 0;
+
+      contents {
+        color: $foreground;
+        background-color: $background;
+        @include overlay-border($color14, 1px);
+      }
     }
   }
 }

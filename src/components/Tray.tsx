@@ -1,4 +1,4 @@
-import Widget from "@/components/ui/widget";
+import Widget from "@/components/core/widget";
 import TrayItem from "@/components/widgets/TrayItem";
 import TrayService from "@/services/tray";
 

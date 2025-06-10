@@ -6,3 +6,8 @@ window.bar {
 	@extend %bar;
 	@extend %overlay;
 }
+
+window.notification-popup {
+	@extend %notifications;
+	@extend %overlay;
+}

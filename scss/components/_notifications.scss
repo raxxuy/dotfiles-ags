@@ -1,0 +1,64 @@
+@use "../abstracts" as *;
+
+%notifications {
+	.notification {
+		background: rgba(0, 0, 0, 0.8);
+		border-radius: $border-radius-md;
+		padding: $spacing-md;
+		margin: $spacing-sm;
+		box-shadow: $shadow-md;
+		transition: all $transition-normal;
+		@include overlay-border($color14, 1px);
+
+		&-header {
+			margin-bottom: $spacing-sm;
+		}
+
+		&-icon {
+			margin-right: $spacing-sm;
+			min-width: 24px;
+			min-height: 24px;
+		}
+
+		&-app-name {
+			font-weight: bold;
+			font-size: 0.9em;
+		}
+
+		&-time {
+			font-size: 0.8em;
+			opacity: 0.7;
+		}
+
+		&-close {
+			padding: $spacing-xs;
+			margin-left: $spacing-sm;
+			border-radius: $border-radius-sm;
+			transition: all $transition-fast;
+
+			&:hover {
+				background: rgba(255, 255, 255, 0.1);
+			}
+		}
+
+		&-content {
+			margin-top: $spacing-sm;
+		}
+
+		&-summary {
+			font-weight: bold;
+			margin-bottom: $spacing-xs;
+		}
+
+		&-body {
+			font-size: 0.9em;
+			opacity: 0.9;
+			line-height: 1.4;
+		}
+
+		separator {
+			background: rgba(255, 255, 255, 0.1);
+			margin: $spacing-xs 0;
+		}
+	}
+} 

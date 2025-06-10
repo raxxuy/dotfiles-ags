@@ -1,7 +1,4 @@
-// import { OverlayPosition, OverlayType } from "./overlay.types";
-
 interface CreateOverlayClassesParams {
-	id?: string;
 	border: boolean;
 	backdrop: boolean;
 	transition: boolean;
@@ -9,7 +6,6 @@ interface CreateOverlayClassesParams {
 }
 
 export function createOverlayClasses({
-	id,
 	border,
 	backdrop,
 	transition,
@@ -17,7 +13,6 @@ export function createOverlayClasses({
 }: CreateOverlayClassesParams): string[] {
 	const classes = ["overlay", ...extraClasses];
 
-	if (id) classes.push(`overlay-${id}`);
 	if (transition) classes.push("overlay-transition");
 	if (backdrop) classes.push("overlay-backdrop");
 	if (border) classes.push("overlay-border");

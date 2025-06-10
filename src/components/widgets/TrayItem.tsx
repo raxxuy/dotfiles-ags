@@ -1,5 +1,5 @@
-import Widget from "@/components/ui/widget";
-import { Gtk } from "astal/gtk4";
+import Widget from "@/components/core/widget";
+import { PopoverMenu } from "@/constants/ags";
 import AstalTray from "gi://AstalTray";
 
 interface TrayItemProps {
@@ -11,13 +11,13 @@ export default function TrayItem({ item }: TrayItemProps) {
 		<Widget as="menubutton"
 			cssClasses={["tray-item"]}
 			tooltipText={item.title}
-			setup={(self) =>
+			setup={(self: any) =>
 				item.actionGroup &&
 				self.insert_action_group("dbusmenu", item.actionGroup)
 			}
 		>
 			<image gicon={item.gicon} />
-			<Gtk.PopoverMenu menuModel={item.menuModel} hasArrow={false} />
+			<PopoverMenu menuModel={item.menuModel} hasArrow={false} />
 		</Widget>
 	);
 }

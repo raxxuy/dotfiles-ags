@@ -1,4 +1,4 @@
-import Widget from "@/components/ui/widget";
+import Widget from "@/components/core/widget";
 import HyprService from "@/services/hypr";
 import { Variable } from "astal";
 

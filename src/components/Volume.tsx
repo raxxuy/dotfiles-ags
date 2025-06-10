@@ -1,4 +1,4 @@
-import Widget from "@/components/ui/widget";
+import Widget from "@/components/core/widget";
 import WpService from "@/services/wp";
 import { Variable } from "astal";
 
